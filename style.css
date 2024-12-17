@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/**
+ * ***************************************
+ * ページ全体に関わるCSSの設定
+ * ***************************************
+ */
+
+html *,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* モバイルフォント */
+html {
+	font-size: 14px;
+}
+
+/* PCフォント */
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+}
+
+/* 標準的なリンクのテキスト色 */
+a {
+	color: #fcf8e3;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/**
+ * ***************************************
+ * ヘッダー
+ * ***************************************
+ */
+
+header {
+	background-color: #1f2445;
+}
+
+.header-content {
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.title {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.title h1 {
+	margin: 10px;
+	font-weight: bold;
+	color: rgb(255, 255, 255);
+}
+
+/**
+ * ***************************************
+ * サブメイン
+ * ***************************************
+ */
+.sub_main {
+	height: 60px;
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.display {
+	margin: 10px;
+}
+
+.start {
+	font-size: 24px;
+}
+
+.message {
+	font-size: 24px;
+}
+
+.blue {
+	color: #3498db;
+	font-weight: bold;
+}
+
+.red {
+	color: #e74c3c;
+	font-weight: bold;
+}
+
+/**
+ * ***************************************
+ * メイン
+ * ***************************************
+ */
+
+.main {
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* 垂直方向の中央揃え */
+}
+
+.board {
+    width: calc(3 * 100px + 2 * 5px); /* グリッドの幅を計算: カラム数 * 幅 + ギャップ数 * ギャップサイズ */
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+
+.cell {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	border: 1px solid #000;
+}
+
+.btn {
+	width: 100px;
+	height: 100px;
+	border-radius: 0px;
+	background: transparent;
+}
+
+/* 〇✕のスタイル */
+.mark {
+	font-size: 70px;
+	font-weight: bold;
+	color: #333;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+/* 〇のスタイル */
+.mark:contains('〇') {
+	color: #3498db;
+}
+
+/* ✕のスタイル */
+.mark:contains('✕') {
+	color: #e74c3c;
+}
+
+.circle-style {
+	color: #3498db;
+}
+
+.cross-style {
+	color: #e74c3c;
+}
+
+.sr_btn {
+	margin: 10px;
+	text-align: center;
+}
+
+.s_btn {
+	width: 120px;
+	height: 40px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+}
+
+.r_btn {
+	width: 80px;
+	height: 40px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+/**
+ * ***************************************
+ * テーブル
+ * ***************************************
+ */
+table {
+	border-collapse: collapse;
+	/* 線を1本にする */
+	width: 100%;
+	/* 必要に応じて全幅 */
+	text-align: center;
+}
+
+/* セルのスタイル */
+th,
+td {
+	border: 1px solid black;
+	/* 黒の枠線 */
+	padding: 10px;
+	/* セルの余白 */
+}
+
+th {
+	background-color: #f4f4f4;
+	/* ヘッダー背景色（薄い灰色） */
+}
+
+/**
+ * ***************************************
+ * フッター
+ * ***************************************
+ */
+
+footer {
+	margin-top:10px;
+	background-color: #1f2445;
+}
+
+
+
+/* PCラストタブ*/
+@media (min-width: 768px) {
+
+	/*©*/
+	.copy {
+		text-align: center;
+		padding: 15px 5px;
+		color: #ffffff;
+	}
+}
