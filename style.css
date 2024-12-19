@@ -123,7 +123,7 @@ header {
 .main {
 	width: 100%;
 	max-width: 700px;
-	margin: 0 auto;
+	margin: 0 auto 200px;
 	padding: 0 20px;
 	display: flex;
 	flex-direction: column;
@@ -133,12 +133,13 @@ header {
 }
 
 .board {
-    width: calc(3 * 100px + 2 * 5px); /* グリッドの幅を計算: カラム数 * 幅 + ギャップ数 * ギャップサイズ */
-    margin: 0 auto; 
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 5px;
+	width: calc(3 * 100px + 2 * 5px);
+	/* グリッドの幅を計算: カラム数 * 幅 + ギャップ数 * ギャップサイズ */
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 5px;
 }
 
 
@@ -159,7 +160,6 @@ header {
 	background: transparent;
 }
 
-/* 〇✕のスタイル */
 .mark {
 	font-size: 70px;
 	font-weight: bold;
@@ -169,14 +169,63 @@ header {
 	text-align: center;
 }
 
-/* 〇のスタイル */
 .mark:contains('〇') {
 	color: #3498db;
 }
 
-/* ✕のスタイル */
 .mark:contains('✕') {
 	color: #e74c3c;
+}
+
+.sr_btn {
+	text-align: center;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	/* ボタン間の間隔 */
+}
+
+.circle_btn,
+.cross_btn,
+.s_btn {
+	width: 60px;
+	height: 60px;
+	font-weight: bold;
+	font-size: 32px;
+	background-color: white;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	/* なめらかなアニメーション */
+}
+
+.circle_btn {
+	color: #3498db;
+	border-color: #3498db;
+}
+
+.cross_btn {
+	color: #e74c3c;
+	border-color: #e74c3c;
+}
+
+.s_btn {
+	width: 160px;
+	font-size: 16px;
+	background-color: #1f2445;
+	color: white;
+	border: 2px solid #1f2445;
+}
+
+
+
+.r_btn {
+	width: 80px;
+	height: 40px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .circle-style {
@@ -187,27 +236,6 @@ header {
 	color: #e74c3c;
 }
 
-.sr_btn {
-	margin: 10px;
-	text-align: center;
-}
-
-.s_btn {
-	width: 120px;
-	height: 40px;
-	margin-bottom: 10px;
-	font-weight: bold;
-	background-color: red;
-	color: white;
-}
-
-.r_btn {
-	width: 80px;
-	height: 40px;
-	margin-bottom: 10px;
-	font-weight: bold;
-}
-
 /**
  * ***************************************
  * テーブル
@@ -215,26 +243,36 @@ header {
  */
 table {
 	border-collapse: collapse;
-	/* 線を1本にする */
 	width: 100%;
-	/* 必要に応じて全幅 */
+	margin-bottom: 10px;
 	text-align: center;
 }
 
-/* セルのスタイル */
 th,
 td {
 	border: 1px solid black;
-	/* 黒の枠線 */
 	padding: 10px;
-	/* セルの余白 */
 }
 
 th {
 	background-color: #f4f4f4;
-	/* ヘッダー背景色（薄い灰色） */
 }
 
+th.first {
+	color: #3498db;
+}
+
+th.second {
+	color: #e74c3c;
+}
+
+.explanation {
+	border: 2px solid #cccccc;
+}
+
+.explanation p {
+	padding: 6px;
+}
 /**
  * ***************************************
  * フッター
@@ -242,11 +280,15 @@ th {
  */
 
 footer {
-	margin-top:10px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px;
 	background-color: #1f2445;
 }
-
-
 
 /* PCラストタブ*/
 @media (min-width: 768px) {
